@@ -1,0 +1,102 @@
+:root {
+  --bg: #0e1117;
+  --card: #161b22;
+  --border: #272e3a;
+  --text: #e6edf3;
+  --muted: #8b949e;
+  --accent: #4f8cff;
+  --accent-2: #2ea043;
+  --bar: #21304d;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.5;
+}
+
+.container { max-width: 680px; margin: 0 auto; padding: 2rem 1rem 4rem; }
+
+header h1 { margin: 0; font-size: 2rem; }
+.subtitle { color: var(--muted); margin-top: .25rem; }
+
+h2 { font-size: 1.15rem; }
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.25rem;
+  margin: 1.5rem 0;
+}
+
+input {
+  width: 100%;
+  padding: .6rem .75rem;
+  margin-bottom: .5rem;
+  background: #0d1117;
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-size: 1rem;
+}
+input:focus { outline: 2px solid var(--accent); border-color: transparent; }
+
+button {
+  padding: .6rem 1rem;
+  border: none;
+  border-radius: 8px;
+  background: var(--accent);
+  color: white;
+  font-size: .95rem;
+  cursor: pointer;
+}
+button:hover { filter: brightness(1.08); }
+button.secondary { background: transparent; border: 1px solid var(--border); color: var(--text); }
+
+.row { display: flex; gap: .5rem; align-items: center; margin-top: .5rem; }
+.row.spread { justify-content: space-between; }
+
+.error { color: #ff7b72; margin: .5rem 0 0; }
+.muted { color: var(--muted); }
+
+.polls { list-style: none; padding: 0; margin: 1rem 0 0; }
+
+.poll {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+  margin-bottom: 1rem;
+}
+.poll h3 { margin: 0 0 .25rem; }
+.poll .meta { color: var(--muted); font-size: .8rem; margin-bottom: .75rem; }
+
+.option-row { margin-bottom: .6rem; }
+.option-head { display: flex; justify-content: space-between; gap: 1rem; margin-bottom: .2rem; }
+.option-head .count { color: var(--muted); font-variant-numeric: tabular-nums; }
+
+.option-button {
+  width: 100%;
+  text-align: left;
+  background: var(--bar);
+  position: relative;
+  overflow: hidden;
+  padding: .55rem .7rem;
+  border: 1px solid var(--border);
+}
+.option-button .fill {
+  position: absolute;
+  inset: 0;
+  width: var(--pct, 0%);
+  background: linear-gradient(90deg, rgba(79,140,255,.35), rgba(46,160,67,.35));
+  transition: width .35s ease;
+}
+.option-button .label { position: relative; }
+
+.poll .delete { background: transparent; color: var(--muted); border: 1px solid var(--border); font-size: .8rem; }
+.poll-footer { display: flex; justify-content: space-between; align-items: center; margin-top: .5rem; }

@@ -1,0 +1,16 @@
+{
+  "name": "voter",
+  "version": "1.0.0",
+  "description": "A live polls web app with a JSON API, built on Node's standard library only.",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js",
+    "test": "node --test"
+  },
+  "license": "MIT",
+  "private": true
+}

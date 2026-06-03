@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Voter — live polls</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <main class="container">
+    <header>
+      <h1>🗳️ Voter</h1>
+      <p class="subtitle">Create a poll, share the page, watch the votes roll in.</p>
+    </header>
+
+    <section class="card">
+      <h2>New poll</h2>
+      <form id="new-poll">
+        <input id="question" name="question" placeholder="Ask a question…"
+               maxlength="280" required />
+        <div id="options">
+          <input class="option" placeholder="Option 1" maxlength="120" required />
+          <input class="option" placeholder="Option 2" maxlength="120" required />
+        </div>
+        <div class="row">
+          <button type="button" id="add-option" class="secondary">+ Add option</button>
+          <button type="submit">Create poll</button>
+        </div>
+        <p id="form-error" class="error" hidden></p>
+      </form>
+    </section>
+
+    <section>
+      <div class="row spread">
+        <h2>Polls</h2>
+        <button type="button" id="refresh" class="secondary">Refresh</button>
+      </div>
+      <ul id="polls" class="polls"></ul>
+      <p id="empty" class="muted" hidden>No polls yet — create the first one above.</p>
+    </section>
+  </main>
+
+  <script type="module" src="/app.js"></script>
+</body>
+</html>
