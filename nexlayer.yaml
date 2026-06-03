@@ -1,0 +1,15 @@
+application:
+  name: just-eagle-voter
+  pods:
+    - name: app
+      image: "# filled by pipeline"
+      path: /
+      servicePorts:
+        - 3000
+      vars:
+        - key: NODE_ENV
+          value: production
+        - key: PORT
+          value: "3000"
+        - key: HOSTNAME
+          value: "0.0.0.0"
