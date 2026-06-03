@@ -87,9 +87,9 @@ jobs:
             echo "## Deployed to Nexlayer"
             echo ""
             echo "**URL:** [$DEPLOY_URL]($DEPLOY_URL)"
-            [ -n "$RUNTIME" ] && echo "**Runtime:** $RUNTIME"
-            [ "$FIX_ATTEMPTS" -gt 0 ] && echo "**Auto-fixes applied:** $FIX_ATTEMPTS"
-            [ -n "$PR_URL" ] && echo "**Config PR:** $PR_URL"
+            if [ -n "$RUNTIME" ];           then echo "**Runtime:** $RUNTIME"; fi
+            if [ "$FIX_ATTEMPTS" -gt 0 ];   then echo "**Auto-fixes applied:** $FIX_ATTEMPTS"; fi
+            if [ -n "$PR_URL" ];            then echo "**Config PR:** $PR_URL"; fi
           } >> "$GITHUB_STEP_SUMMARY"
 
       - name: Comment preview URL on PR
